@@ -1,35 +1,28 @@
 package com.yanxin.study.ds.base.二分法;
 /*
-* 二分法1.0版本
-*
-*
-*
-* */
-public class BinarySerch {
-    public static void main(String[] args) {
-        int [] arr={1,2,3,4,5,6,7,8};
-        int target=7;
-        binarySearchBase(arr,target);
+* 二分查找升级版*/
+public class BinarySearchAlternative {
 
 
-    }
-    public static int binarySearchBase(int [] arr,int target)
+
+
+    public static int binarySearchBaseAlternative(int [] arr,int target)
     {
         /*左半边初始变量*/
         int i=0;
         /*右半边初始变量*/
-        int j=arr.length-1;
+        int j=arr.length;
 
         /*判断数据*/
-        while (i<=j)
+        while (i<j)
         {
-          /*寻找一个中间值*/
-            int m=(i+j)/2;
+            /*寻找一个中间值 >>>：无符号右移位 >>:带符号右移*/
+            int m=(i+j)>>>1;
             /*如果目标值<中间值*/
             if(target<arr[m])
             {
                 /*j必须向左移动*/
-                j=m-1;
+                j=m;
 
             }
             /*如果目标值>中间值说明在右边找*/
@@ -45,7 +38,11 @@ public class BinarySerch {
 
         }
 
-        /*未找到返回-1*/
+
+
+
+
+
         return -1;
     }
 }
